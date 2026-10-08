@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")"
+  },
+  {
+    "objectID": "budget-revenue.html#budget-and-revenue",
+    "href": "budget-revenue.html#budget-and-revenue",
+    "title": "Budget and Revenue",
+    "section": "Budget and revenue",
+    "text": "Budget and revenue\nFigure 1 shows the relationship between film budgets and worldwide revenue. Each point represents one film in the dataset.\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (millions of US dollars)\")\nplt.ylabel(\"Worldwide revenue (millions of US dollars)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Film budget against worldwide revenue"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Box Office Numbers",
+    "section": "",
+    "text": "This website explores a dataset of 104 films released from 1980 to 2025. The dataset includes information about each film’s budget, worldwide revenue, runtime, IMDb rating, and franchise."
+  },
+  {
+    "objectID": "index.html#analysis",
+    "href": "index.html#analysis",
+    "title": "Box Office Numbers",
+    "section": "Analysis",
+    "text": "Analysis\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nI used ChatGPT to help me understand the quiz instructions, review commands, and troubleshoot my work."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")"
+  },
+  {
+    "objectID": "runtime-rating.html#runtime-and-rating",
+    "href": "runtime-rating.html#runtime-and-rating",
+    "title": "Runtime and Ratings",
+    "section": "Runtime and rating",
+    "text": "Runtime and rating\nFigure 1 shows the relationship between a film’s runtime and its IMDb rating. Each point represents one film in the dataset.\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDb rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Film runtime against IMDb rating"
+  },
+  {
+    "objectID": "runtime-rating.html#mean-rating-by-decade",
+    "href": "runtime-rating.html#mean-rating-by-decade",
+    "title": "Runtime and Ratings",
+    "section": "Mean rating by decade",
+    "text": "Mean rating by decade\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "The Bond Films",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\nbond = films[films[\"franchise\"] == \"James Bond\"]"
+  },
+  {
+    "objectID": "bond.html#bond-revenue-over-time",
+    "href": "bond.html#bond-revenue-over-time",
+    "title": "The Bond Films",
+    "section": "Bond revenue over time",
+    "text": "Bond revenue over time\nThe Bond films in this dataset range from 1995 to 2021.\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"])\nplt.xlabel(\"Year\")\nplt.ylabel(\"Worldwide revenue (millions of US dollars)\")\nplt.show()"
+  }
+]
