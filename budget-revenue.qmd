@@ -1,0 +1,27 @@
+---
+title: "Budget and Revenue"
+---
+
+```{python}
+#| echo: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+```
+
+## Budget and revenue
+
+@fig-budget-revenue shows the relationship between film budgets and worldwide revenue. Each point represents one film in the dataset.
+
+```{python}
+#| label: fig-budget-revenue
+#| fig-cap: "Film budget against worldwide revenue"
+#| echo: true
+
+plt.scatter(films["budget_musd"], films["revenue_musd"])
+plt.xlabel("Budget (millions of US dollars)")
+plt.ylabel("Worldwide revenue (millions of US dollars)")
+plt.show()
+```
