@@ -20,3 +20,21 @@ open -a "Visual Studio Code" commands.txt
 open -a "Visual Studio Code" index.qmd
 touch budget-revenue.qmd runtime-rating.qmd bond.qmd
 open -a "Visual Studio Code" budget-revenue.qmd
+cat index.qmd
+cat budget-revenue.qmd
+git status
+cat runtime-rating.qmd
+git status
+open -a "Visual Studio Code" bond.qmd
+quarto render
+ls -a
+git status
+git add .
+git status
+git commit -m "Add site pages and freeze"
+git status
+quarto publish gh-pages
+git add commands.txt
+git commit -m "Add command log"
+git push
+git status
